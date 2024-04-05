@@ -35,10 +35,11 @@ public class FunctionalInterfaces {
 
     // Predicate<T>
     Predicate<Integer> isAdult = (age) -> age >= 18;
-    List<Integer> ages = List.of(19,12,33,14,51);
-    List<Integer>  filteredAges = ages.stream()
+    var ages = List.of(19,12,33,14,51);
+    var filteredAges = ages.stream()
         .filter(isAdult)
         .collect(Collectors.toList());
+    System.out.println("Predicate isAdult Result: " + isAdult.test(25));
     System.out.println("Predicate Result: " + filteredAges);
 
     // UnaryOperator<T>
